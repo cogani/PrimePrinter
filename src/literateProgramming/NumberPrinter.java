@@ -10,17 +10,14 @@ package literateProgramming;
 class NumberPrinter {
     private final int linesPerPages;
     private final int columns;
-    private int[] numbers;
-    private int numbersOfNumbers;
 
-    public NumberPrinter(int linesPerPages, int columns, int[] numbers, int numbersOfNumbers) {
+    public NumberPrinter(int linesPerPages, int columns) {
         this.linesPerPages = linesPerPages;
         this.columns = columns;
-        this.numbers = numbers;
-        this.numbersOfNumbers = numbersOfNumbers;
+
     }
 
-    public void invoke() {
+    public void print( int[] numbers, int numbersOfNumbers) {
         int pagenumber = 1;
         int pageoffset = 1;
         while (pageoffset <= numbersOfNumbers) {

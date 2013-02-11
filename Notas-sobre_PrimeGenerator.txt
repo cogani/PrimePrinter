@@ -71,22 +71,18 @@ Commit "Starting - Initial case with no changes"
 
  - 7. NumberPrinter from inner class to outer class.
    - inner to outer class, pero hay que arreglar los campos privados.
-      - pagenumber, pageoffset, rowoffset, colum
+      - pagenumber, pageoffset, rowoffset, colum se convierten en parametros locales del metodo NumberPrinter.invoke()
+      - int linesPerPages, int columns, pasan a ser parametros del contructor de NumberPrinter
+      - Modificar la creacion de instancia para NumberPrinter en PrimePrinterHelper.printNumber()
 
+   * commit: "NumberPrinter from inner class to outer class"
 
+ - 8. Better names
+      - NumberPrinter.invoke()-> NumberPrinter.print()
+        - NumberPrinter(linesPerPages, columns, numbers, numbersOfNumbers).print(); ->
+        - new NumberPrinter(linesPerPages, columns).print(numbers, numbersOfNumbers); (Mejoro el numero de argumentos). 
+        - Y reajustamos los parametros del constructor y del metodo print.
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
+   * commit: "NumberPrinter: Improving arguments methods"
 
 
