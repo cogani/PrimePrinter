@@ -110,3 +110,9 @@ Commit "Starting - Initial case with no changes"
 
    * Test: OK
    * commit: "Improving PrimePrinterHelper -> PrimeGenerator"
+
+ - 10. Improving while/do inside PrimeGenerator.generatePrimes
+      - Refactor: extract code while/do -> findNextPrime()
+
+   * Test: OK
+   * commit: "Improving while/do inside PrimeGenerator.generatePrimes -> findNextPrime()"
