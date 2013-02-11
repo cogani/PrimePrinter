@@ -50,6 +50,25 @@ Commit "Starting - Initial case with no changes"
    - Generar el array de primos
    - (lineas 38 - 58) Imprimir el array de primos. Lo extraigo en "printNumbers". Ademas inyecto por parametros de entrada lo que tiene que imprimir: printNumbers(int[]primes, int numbersOfPrimes). De esta forma exmpiezo a reducir el acomplamiento desde metodo con su clase, preparandome asi para una posterior refactorizacion (metodo -> clase)
    - Test: OK
+ - 4. Mejora SRP 
+   - Limpieza de nombres: printNumbers(int[]primes, int numbersOfPrimes) -> printNumbers(int[]numbers, int numbersOfNumbers)
+   -Solucion Violacion SRP: No tiene sentido imprimir los numeros en el mismo sitio que se generan. Para arreglarlo
+      - Saco la llamado de impresion de primos "printNumbers(primes, numbersOfPrimes);". La declaro como "public para poder invocarla desde el exterior. 
+      - Y hago que el metodo invoke() devuelva el array de primos generado ( return primes y cambio signature void invoke() -> int[] invoke())
+      - Y en el main recojo los primos devueltos por invoke y los paso a la llamada de printNumbers(primes, numbersOfPrimes);
+      - Misc: Declara "private static final int numbersOfPrimes = 1000" en "class PrimePrinter"
+
+   * commit: Improving SRP invoke by moving printing numbers to main
+
+ - 5. Limpiando nombres.
+   - Mejorando nombre primePrinterHelper.invoke() -> primePrinterHelper.generatePrimes()
+
+
+
+
+
+
+
 
  
 

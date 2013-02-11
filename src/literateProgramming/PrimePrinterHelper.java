@@ -1,14 +1,6 @@
 package literateProgramming;
 
-/**
- * Created with IntelliJ IDEA.
- * User: nanopc
- * Date: 11/02/13
- * Time: 16:58
- * To change this template use File | Settings | File Templates.
- */
 class PrimePrinterHelper {
-
     private final int numbersOfPrimes = 1000;
     private final int linesPerPages = 50;
     private final int columns = 4;
@@ -26,8 +18,8 @@ class PrimePrinterHelper {
     private int n;
     private final int[] multiples = new int[ordmax + 1];
 
-    void invoke() {
-        n=0;
+    int[] generatePrimes() {
+        n = 0;
         candidate = 1;
         primeIndex = 1;
         primes[1] = 2;
@@ -56,22 +48,20 @@ class PrimePrinterHelper {
             primeIndex = primeIndex + 1;
             primes[primeIndex] = candidate;
         }
-        {
-            printNumbers(primes, numbersOfPrimes);
-        }
+        return primes;
     }
 
-    private void printNumbers(int[]primes, int numbersOfPrimes) {
+    public void printNumbers(int[] numbers, int numbersOfNumbers) {
         pagenumber = 1;
         pageoffset = 1;
-        while (pageoffset <= numbersOfPrimes) {
-            System.out.println("The First " + numbersOfPrimes +
+        while (pageoffset <= numbersOfNumbers) {
+            System.out.println("The First " + numbersOfNumbers +
                     " Prime Numbers --- Page " + pagenumber);
             System.out.println("");
-            for (rowoffset = pageoffset; rowoffset < pageoffset + linesPerPages; rowoffset++){
+            for (rowoffset = pageoffset; rowoffset < pageoffset + linesPerPages; rowoffset++) {
                 for (colum = 0; colum < columns; colum++)
-                    if (rowoffset + colum * linesPerPages <= numbersOfPrimes)
-                        System.out.format("%10d", primes[rowoffset + colum * linesPerPages]);
+                    if (rowoffset + colum * linesPerPages <= numbersOfNumbers)
+                        System.out.format("%10d", numbers[rowoffset + colum * linesPerPages]);
                 System.out.println("");
             }
             System.out.println("\f");
