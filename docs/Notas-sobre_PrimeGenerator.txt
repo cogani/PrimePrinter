@@ -130,3 +130,10 @@ Commit "Starting - Initial case with no changes"
    * Test: OK
    * commit: "Improving PrimePrinter.main() and docs"
 
+ - 12. Empezamos a refactorizar NumberPrinter.print()
+      - Reducimos el codigo mediante extraccion de metodos.
+
+   * Test: OK
+   * commit: "Improving NumberPrinter.print()-1"
+
+
