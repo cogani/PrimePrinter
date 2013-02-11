@@ -63,7 +63,11 @@ Commit "Starting - Initial case with no changes"
  - 5. Limpiando nombres.
    - Mejorando nombre primePrinterHelper.invoke() -> primePrinterHelper.generatePrimes()
 
+   * commit: "Cleaning: primePrinterHelper.invoke() -> primePrinterHelper.generatePrimes()"
 
+ - 6. Extract method printNumbers to class NumberPrinter.
+   - Refactoring method to method object.
+   * commit: "Extract method printNumbers to class NumberPrinter"
 
 
 
