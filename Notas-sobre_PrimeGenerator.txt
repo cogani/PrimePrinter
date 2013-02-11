@@ -100,3 +100,13 @@ Commit "Starting - Initial case with no changes"
 
    * Test: OK
    * commit: "PrimePrinterHelper.printNumbers(): Extract code directly to PrimePrinter.main()"
+
+ - 10. Cleaning code
+      - PrimePrinterHelper: eliminamos variables ya no necesarias: linesPerPages, columns, pagenumber, pageoffset, rowoffset, colum.
+      - Renaming PrimePrinterHelper -> PrimeGenerator.
+      - Generalizamos el metodo PrimePrinterHelper.generatePrimes() para que trabaje con un numero de primos parametrizado:
+         - Ya no necesito private final int numbersOfPrimes = 1000; como var de la clase PrimeGenerator
+         - Y tengo que cambiar la instanciacion del array "primes" desde la clase al metodo "generatePrimes"
+
+   * Test: OK
+   * commit: "Improving PrimePrinterHelper -> PrimeGenerator"
