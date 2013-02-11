@@ -69,6 +69,13 @@ Commit "Starting - Initial case with no changes"
    - Refactoring method to method object.
    * commit: "Extract method printNumbers to class NumberPrinter"
 
+ - 7. NumberPrinter from inner class to outer class.
+   - inner to outer class, pero hay que arreglar los campos privados.
+      - pagenumber, pageoffset, rowoffset, colum
+
+
+
+
 
 
 
