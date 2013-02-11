@@ -52,7 +52,7 @@ class PrimePrinterHelper {
     }
 
     public void printNumbers(int[] numbers, int numbersOfNumbers) {
-        new NumberPrinter(linesPerPages, columns).print(numbers, numbersOfNumbers);
+
     }
 
 }

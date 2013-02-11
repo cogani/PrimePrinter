@@ -58,6 +58,7 @@ Commit "Starting - Initial case with no changes"
       - Y en el main recojo los primos devueltos por invoke y los paso a la llamada de printNumbers(primes, numbersOfPrimes);
       - Misc: Declara "private static final int numbersOfPrimes = 1000" en "class PrimePrinter"
 
+   * Test: OK
    * commit: Improving SRP invoke by moving printing numbers to main
 
  - 5. Limpiando nombres.
@@ -67,6 +68,8 @@ Commit "Starting - Initial case with no changes"
 
  - 6. Extract method printNumbers to class NumberPrinter.
    - Refactoring method to method object.
+
+   * Test: OK
    * commit: "Extract method printNumbers to class NumberPrinter"
 
  - 7. NumberPrinter from inner class to outer class.
@@ -75,6 +78,7 @@ Commit "Starting - Initial case with no changes"
       - int linesPerPages, int columns, pasan a ser parametros del contructor de NumberPrinter
       - Modificar la creacion de instancia para NumberPrinter en PrimePrinterHelper.printNumber()
 
+   * Test: OK
    * commit: "NumberPrinter from inner class to outer class"
 
  - 8. Better names
@@ -83,6 +87,16 @@ Commit "Starting - Initial case with no changes"
         - new NumberPrinter(linesPerPages, columns).print(numbers, numbersOfNumbers); (Mejoro el numero de argumentos). 
         - Y reajustamos los parametros del constructor y del metodo print.
 
+   * Test: OK
    * commit: "NumberPrinter: Improving arguments methods"
 
+ - 9. Moving new NumberPrinter(linesPerPages, columns).print(numbers, numbersOfNumbers);
+      - to: PrimePrinter.main()
+      - Y tengo que preparar sus parametros poniendo como campos de PrimePrinter
+         -     private static final int linesPerPages = 50;
+         -     private static final int columns = 4;
+      - Y los paramatros de la llamada de print:
+         -     print(numbers, numbersOfNumbers); -> print(primes, numbersOfPrimes);
 
+   * Test: OK
+   * commit: "PrimePrinterHelper.printNumbers(): Extract code directly to PrimePrinter.main()"
