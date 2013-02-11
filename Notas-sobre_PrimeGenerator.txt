@@ -1,0 +1,62 @@
+Characterization test
+http://en.wikipedia.org/wiki/Characterization_test
+
+Cleaning PrimePrinter code (from literateProgramming) Uncle Bob examples
+
+1 - Copiamos el codigo tal y como viene de legacy code y le añadimos un caso test.
+El caso de test se basa en comparar linea a linea 
+ - el fichero "gold", previamente generado como resultado de la salida por consola del codigo
+ - el fichero "lead" generado durante el propio test.
+
+Todo el test se lleva a cabo en el bucle while de PrimePrinterTest.makeSureOutputMatchesGold().
+Todo Ok.
+Nota: Tuve que elminar el segundo assert "assertEquals(null, lead.readLine())" sino el test falla.
+
+Commit "Starting - Initial case with no changes"
+
+2 - Todo el codigo esta en una sola funcion "main"
+ - main() -> Refactoring - Extract Method Object ->PrimePrinterHelper() 
+
+ - Ahora todo ese codigo se invoca desde el main como "PrimePrinterHelper.invoke()"
+ - Quita el static a "invoke" siendo por tanto necesario instanciar "PrimePrinterHelper"
+ - Testeamos de nuevo -> OK
+ - Transforma "PrimePrinterHelper" de inner class a outer class
+ - Cambio los modificadores de acceso para
+   - PrimePrinterHelper: no private no static
+   - PrimePrinterHelper.invoke(): no private
+ - Test: Ok.
+ - Renombramos las variables y se pasa a variables de clase:
+   - M -> numbersOfPrimes
+   - RR -> linesPerPages
+   - CC -> columns
+   - ORDMAX -> ordmax
+   - P[] -> primes[]
+   - PAGENUMBER -> pagenumber
+   - PAGEOFFSET -> pageoffset
+   - ROWOFFSET -> rowoffset
+   - C -> colum (colum to be printed)
+   - J -> candidate (prime number)
+   - K -> primeIndex (prime number)
+   - JPRIME -> possiblyPrime (prime number)
+   - ORD -> ord
+   - SQUARE -> square
+   - N -> n // Este parace que no se usa.
+   - MULT[] -> multiples
+
+ - Borro "final int WW = 10;" pues no se usaba en ningun lado
+ - TEST: OK
+
+ - 3 Empezamos a extraer metodos desde el metodos main. Basicamente hay 2 partes
+   - Generar el array de primos
+   - (lineas 38 - 58) Imprimir el array de primos. Lo extraigo en "printNumbers". Ademas inyecto por parametros de entrada lo que tiene que imprimir: printNumbers(int[]primes, int numbersOfPrimes). De esta forma exmpiezo a reducir el acomplamiento desde metodo con su clase, preparandome asi para una posterior refactorizacion (metodo -> clase)
+   - Test: OK
+
+ 
+
+
+
+
+
+
+
+
